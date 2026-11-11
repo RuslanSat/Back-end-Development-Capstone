@@ -1,6 +1,7 @@
 # Djirection band website
 
 Completed Django capstone based on the IBM Skills Network template.
+Developed by Ruslan Satvaldiev with AI assistance from the official IBM Skills Network template.
 
 ## Run locally
 
