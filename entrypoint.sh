@@ -1,13 +1,8 @@
 #!/bin/sh
-
-# Make migrations and migrate the database.
-echo "Making migrations and migrating the database. "
-python manage.py makemigrations --noinput
+set -e
 python manage.py migrate --noinput
-
-DJANGO_SUPERUSER_USERNAME=admin \
-DJANGO_SUPERUSER_PASSWORD=admin \
-DJANGO_SUPERUSER_EMAIL="admin@admin.com" \
-python manage.py createsuperuser --noinput
-
+python manage.py shell -c "from concert.models import Concert; from datetime import date; Concert.objects.get_or_create(concert_name='Coachella 2023', defaults={'duration':72,'city':'Indio, California','date':date(2023,4,14)})"
+if [ -n "$DJANGO_SUPERUSER_PASSWORD" ]; then
+    python manage.py createsuperuser --noinput || true
+fi
 exec "$@"
