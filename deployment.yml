@@ -23,6 +23,9 @@ spec:
       - image: us.icr.io/sn-labs-u241983/djangoserver:1
         imagePullPolicy: Always
         name: djangoserver
+        env:
+        - name: PHOTOS_URL
+          value: https://pictures.2h1ovetn7o3d.us-south.codeengine.appdomain.cloud
         ports:
         - containerPort: 8000
           protocol: TCP
