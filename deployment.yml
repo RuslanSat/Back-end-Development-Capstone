@@ -26,6 +26,8 @@ spec:
         env:
         - name: PHOTOS_URL
           value: https://pictures.2h1ovetn7o3d.us-south.codeengine.appdomain.cloud
+        - name: SONGS_URL
+          value: http://songs-sn-labs-u241983.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud
         ports:
         - containerPort: 8000
           protocol: TCP
